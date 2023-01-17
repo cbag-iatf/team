@@ -8,8 +8,8 @@ Array.from(document.getElementsByClassName('dropdown')).forEach(elA => {
       const dropdownIcon = e.currentTarget.getElementsByClassName('mdi')[1]
 
       e.currentTarget.parentNode.classList.toggle('active')
-      dropdownIcon.classList.toggle('mdi-plus')
-      dropdownIcon.classList.toggle('mdi-minus')
+      dropdownIcon.classList.toggle('mdi-chevron-down')
+      dropdownIcon.classList.toggle('mdi-chevron-up')
     }
   })
 })
