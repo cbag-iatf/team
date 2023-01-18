@@ -185,7 +185,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        \Atpro\Translator\AtproServiceProvider::class,
         /*
          * Application Service Providers...
          */

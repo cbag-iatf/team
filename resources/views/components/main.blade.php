@@ -8,7 +8,7 @@
     <title>Dashboard - Admin One Tailwind CSS Admin Dashboard</title>
 
     <!-- Tailwind is included -->
-    {{-- <link rel="stylesheet" href="{{asset('assets/css/main.css')}}"> --}}
+    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/css/form/main.css') }}">
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
