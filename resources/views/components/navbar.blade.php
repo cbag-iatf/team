@@ -48,7 +48,10 @@
                         <img src="https://avatars.dicebear.com/v2/initials/john-doe.svg" alt="John Doe"
                             class="rounded-full">
                     </div>
-                    <div class="is-user-name"><span>John Doe</span></div>
+                    <div class="is-user-name"><span>
+
+                            {{ Auth::user()->name }}
+                        </span></div>
                     <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
                 </a>
                 <div class="navbar-dropdown">
@@ -65,7 +68,7 @@
                         <span>Messages</span>
                     </a>
                     <hr class="navbar-divider">
-                    <a class="navbar-item">
+                    <a href="{{ Auth::logout() }}" class="navbar-item">
                         <span class="icon"><i class="mdi mdi-logout"></i></span>
                         <span>Log Out</span>
                     </a>
@@ -77,24 +80,25 @@
 
 
             <ul class="menu-list" style="background: white">
-              <li>
-                  <a class="dropdown ">
-                      <span class="icon"><i class="mdi mdi-flag"></i></span>
-                      <span>language</span>
-                      <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
-                  </a>
-                  <ul>
-                      <li class="nav-item lh-1 me-3">
-                          <a  class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
-                              <x-current-language/>
-                          </a>
-                          <ul class="dropdown-menu dropdown-menu-end" >
-                              <x-atpro-internalisation/>
-                          </ul>
-                      </li>
-                  </ul>
-              </li>
-          </ul>
+                <li>
+                    <a class="dropdown ">
+                        <span class="icon"><i class="mdi mdi-flag"></i></span>
+                        <span>language</span>
+                        <span class="icon"><i class="mdi mdi-chevron-down"></i></span>
+                    </a>
+                    <ul>
+                        <li class="nav-item lh-1 me-3">
+                            <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);"
+                                data-bs-toggle="dropdown">
+                                <x-current-language />
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <x-atpro-internalisation />
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
 
             {{-- <div class="dropdown show">
 

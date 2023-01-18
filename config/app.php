@@ -186,6 +186,7 @@ return [
          * Package Service Providers...
          */
         \Atpro\Translator\AtproServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Application Service Providers...
          */
