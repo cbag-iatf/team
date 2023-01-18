@@ -94,15 +94,17 @@
                             <x-input-error :messages="$errors->get('password')" class="mt-2" />
 
                         </div>
-                        {{-- 
+                        
                         <div class="field spaced">
                             <div class="control">
-                                <label class="checkbox"><input type="checkbox" name="remember" value="1" checked>
+                                <label class="checkbox">
+                                    <input id="remember_token
+                                    " type="checkbox" name="remember_token">
                                     <span class="check"></span>
                                     <span class="control-label">Remember</span>
                                 </label>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <hr>
 
@@ -112,11 +114,11 @@
                                     Login
                                 </button>
                             </div>
-                            {{-- <div class="control">
+                            <div class="control">
                                 <a href="index.html" class="button">
                                     Back
                                 </a>
-                            </div> --}}
+                            </div>
                         </div>
 
                     </form>
