@@ -25,12 +25,12 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="#void">
+                        <a href="{{ route('users.index') }}" class="menu-link">
                             <span>User</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="{{ route('roles.index') }}" class="menu-link">
                             <span>Roles and permissions</span>
                         </a>
                     </li>

@@ -16,7 +16,7 @@
         </ul>
         <p class="menu-label">Parametres</p>
         <ul class="menu-list">
-      
+
             <li>
                 <a class="dropdown">
                     <span class="icon"><i class="mdi mdi-view-list"></i></span>
@@ -25,18 +25,18 @@
                 </a>
                 <ul>
                     <li>
-                        <a href="#void">
+                        <a href="{{ route('users.index') }}" class="menu-link">
                             <span>User</span>
                         </a>
                     </li>
                     <li>
-                        <a href="#void">
+                        <a href="{{ route('roles.index') }}" class="menu-link">
                             <span>Roles and permissions</span>
                         </a>
                     </li>
                 </ul>
             </li>
         </ul>
-    
+
     </div>
 </aside>

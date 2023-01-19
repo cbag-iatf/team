@@ -135,7 +135,7 @@
 
     {{-- <script type="text/javascript" src="js/main.min.js?v=1628755089081"></script> --}}
 
-
+{{-- 
     <script>
         ! function(f, b, e, v, n, t, s) {
             if (f.fbq) return;
@@ -157,7 +157,7 @@
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '658339141622648');
         fbq('track', 'PageView');
-    </script>
+    </script> --}}
     <noscript><img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=658339141622648&ev=PageView&noscript=1" /></noscript>
 

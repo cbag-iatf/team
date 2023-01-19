@@ -68,7 +68,9 @@
                         <span>Messages</span>
                     </a>
                     <hr class="navbar-divider">
-                    <a href="{{ Auth::logout() }}" class="navbar-item">
+                    {{-- <a href="{{ Auth::logout() }}" class="navbar-item"> --}}
+                    <a  class="navbar-item">
+                        
                         <span class="icon"><i class="mdi mdi-logout"></i></span>
                         <span>Log Out</span>
                     </a>
