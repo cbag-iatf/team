@@ -53,7 +53,7 @@ class UserController extends Controller
         $user->givePermissionTo($request->input('permissions'));
 
         return redirect()->route('users.index')
-            ->with('toast_success',Lang::get('user.create_message'));
+            ->with('toast_success','Ajouté avec succés');
     }
 
     public function show(User $user): Factory|View|Application
@@ -130,7 +130,7 @@ class UserController extends Controller
             $user->givePermissionTo($request->input('permissions'));
         }
 
-        return  back()->with('toast_success','Ajouté avec succés');
+        return  back()->with('toast_success','Modifié avec succés');
     }
 
     /**

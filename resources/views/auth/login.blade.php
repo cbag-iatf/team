@@ -114,11 +114,11 @@
                                     Login
                                 </button>
                             </div>
-                            <div class="control">
+                            {{-- <div class="control">
                                 <a href="index.html" class="button">
                                     Back
                                 </a>
-                            </div>
+                            </div> --}}
                         </div>
 
                     </form>
