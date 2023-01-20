@@ -130,7 +130,7 @@ class UserController extends Controller
             $user->givePermissionTo($request->input('permissions'));
         }
 
-        return  back()->with('toast_success',Lang::get('user.update_message'));
+        return  back()->with('toast_success','Ajouté avec succés');
     }
 
     /**
@@ -189,6 +189,6 @@ class UserController extends Controller
         }
         $user->delete();
 
-        return back()->with('toast_error', Lang::get('user.delete_message'));
+        return back()->with('toast_error', 'User Supprimé avec succés');
     }
 }
