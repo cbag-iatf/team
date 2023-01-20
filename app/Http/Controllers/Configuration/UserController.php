@@ -20,7 +20,7 @@ class UserController extends Controller
 {
     public function index(): Factory|View|Application
     {
-        $users = User::all();
+        $users = DB::table('users')->paginate(2);
         $roles = Role::pluck('name','name')->all();
 
         return view('pages.configuration.user.index', compact('users','roles'));

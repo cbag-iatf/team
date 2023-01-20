@@ -63,10 +63,11 @@
 
                             </tr>
                         @endforeach
-
+                        
                 </table>
 
             </div>
+            {{ $users->links() }}
     </section>
 
     {{-- <div id="delete-modal" class="modal">
