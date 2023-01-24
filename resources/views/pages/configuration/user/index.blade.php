@@ -75,7 +75,8 @@
             {{ $users->links() }}
     </section>
 
-    <x-delete-modal id="deleteConfirmationModel">
+    <x-delete-modal message="{{ __('message.confirm_delete') }}"
+    cancel="{{ __('button.cancel') }}" confirm="{{ __('button.delete') }}" id="deleteConfirmationModel">
     </x-delete-modal>
     {{-- <div id="delete-modal" class="modal">
         <div class="modal-background --jb-modal-close"></div>

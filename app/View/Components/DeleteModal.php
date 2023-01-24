@@ -7,19 +7,23 @@ use Illuminate\View\Component;
 class DeleteModal extends Component
 {
 
+    public string $message;
+    public string $cancel;
+    public string $confirm;
     public string $id;
 
-    /**
-     * Create a new component instance.
-     *
+     /**
+     * @param string $message
+     * @param string $cancel
+     * @param string $confirm
      * @param string $id
-     * 
      */
-    public function __construct( string $id)
+    public function __construct(string $message, string $cancel, string $confirm, string $id)
     {
-        //
+        $this->message = $message;
+        $this->cancel = $cancel;
+        $this->confirm = $confirm;
         $this->id = $id;
-
     }
 
     /**
