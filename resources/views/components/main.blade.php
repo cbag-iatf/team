@@ -61,7 +61,7 @@
         <x-footer></x-footer>
 
 
-        <div id="sample-modal" class="modal">
+        {{-- <div id="sample-modal" class="modal">
             <div class="modal-background --jb-modal-close"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
@@ -93,12 +93,14 @@
                     <button class="button blue --jb-modal-close">Confirm</button>
                 </footer>
             </div>
-        </div>
+        </div> --}}
 
     </div>
 
     <!-- Scripts below are for demo only -->
     <script type="text/javascript" src=" {{ asset('assets/js/main.js') }}"></script>
+    <script type="text/javascript" src=" {{ asset('assets/js/custom.js') }}"></script>
+
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script type="text/javascript" src="{{ asset('assets/js/chart.sample.js') }}"></script>

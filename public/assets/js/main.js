@@ -69,3 +69,5 @@ Array.from(document.getElementsByClassName('--jb-notification-dismiss')).forEach
     e.currentTarget.closest('.notification').classList.add('hidden')
   })
 })
+
+

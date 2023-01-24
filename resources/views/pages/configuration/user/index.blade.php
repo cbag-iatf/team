@@ -48,6 +48,11 @@
                                             <span class="icon"><i class="mdi mdi-eye"></i></span>
                                         </a>
 
+                                        <button type="button" onClick='showModel("users/{!! $user->id !!}")'
+                                            class="button small red">
+                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                        </button>
+                                        {{-- 
                                         <form method="POST" action="{{ route('users.destroy', $user->id) }}">
                                             @method('DELETE')
                                             @csrf
@@ -55,7 +60,7 @@
                                                 <span class="icon"><i class="mdi mdi-trash-can"></i></span>
 
                                             </button>
-                                        </form>
+                                        </form> --}}
 
 
                                     </div>
@@ -63,13 +68,15 @@
 
                             </tr>
                         @endforeach
-                        
+
                 </table>
 
             </div>
             {{ $users->links() }}
     </section>
 
+    <x-delete-modal id="deleteConfirmationModel">
+    </x-delete-modal>
     {{-- <div id="delete-modal" class="modal">
         <div class="modal-background --jb-modal-close"></div>
         <div class="modal-card">
