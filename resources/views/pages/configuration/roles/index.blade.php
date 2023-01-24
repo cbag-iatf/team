@@ -64,15 +64,20 @@
                                                             class="btn btn-sm btn-primary">
                                                             <span class="icon"><i class="mdi mdi-eye"></i></span>
                                                         </a>
+
+                                                        <button type="button" onClick='showModel("roles/{!! $role->id !!}")'
+                                                            class="button small red">
+                                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                                        </button>
                 
-                                                        <form method="POST" action="{{ route('roles.destroy', $role->id) }}">
+                                                        {{-- <form method="POST" action="{{ route('roles.destroy', $role->id) }}">
                                                             @method('DELETE')
                                                             @csrf
                                                             <button class="button small red">
                                                                 <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                 
                                                             </button>
-                                                        </form>
+                                                        </form> --}}
                 
                 
                                                     </div>
@@ -162,15 +167,20 @@
                                                             class="btn btn-sm btn-primary">
                                                             <span class="icon"><i class="mdi mdi-eye"></i></span>
                                                         </a>
+
+                                                        <button type="button" onClick='showModel("permissions/{!! $permission->id !!}")'
+                                                            class="button small red">
+                                                            <span class="icon"><i class="mdi mdi-trash-can"></i></span>
+                                                        </button>
                 
-                                                        <form method="POST" action="{{ route('permissions.destroy', $permission->id) }}">
+                                                        {{-- <form method="POST" action="{{ route('permissions.destroy', $permission->id) }}">
                                                             @method('DELETE')
                                                             @csrf
                                                             <button class="button small red">
                                                                 <span class="icon"><i class="mdi mdi-trash-can"></i></span>
                 
                                                             </button>
-                                                        </form>
+                                                        </form> --}}
                 
                 
                                                     </div>
@@ -191,5 +201,9 @@
         </div>
 
     </section>
+
+    <x-delete-modal message="{{ __('message.confirm_delete') }}"
+    cancel="{{ __('button.cancel') }}" confirm="{{ __('button.delete') }}" id="deleteConfirmationModel">
+    </x-delete-modal>
 </x-main>
 
