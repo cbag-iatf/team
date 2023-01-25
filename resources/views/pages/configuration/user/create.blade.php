@@ -43,7 +43,7 @@
 
                     <div class="field">
                         <label class="label">Password de l'utilisateur</label>
-                       
+
                         {!! Form::text('password', null, ['class' => 'input ']) !!}
                         @error('password')
                             <div class="form-text"> {{ $message }} </div>
@@ -52,23 +52,38 @@
                     </div>
 
                     <hr>
-                    <div class="field">
-                        <label class="label">Roles</label>
-                        {!! Form::select('roles[]', $roles, [], ['class' => 'input']) !!}
-                        @error('roles')
-                            <div class="form-text"> {{ $message }} </div>
-                        @enderror
 
+
+                    <div class="field w-full ">
+                        <div class="w-full">
+                            <x-custom-select label="Roles" name="roles" id="roles"
+                                route="{{ route('roles.selectlist', 'roles') }}" method="selectroles" :options="[]">
+                            </x-custom-select>
+                            @error('roles')
+                                <div class="text-danger text-form"> {{ $message }} </div>
+                            @enderror
+                        </div>
+                    </div>
+                    <div class="field w-full ">
+                        <div class="w-full">
+                            <x-custom-select label="Permissions" name="permissions" id="permissions"
+                                route="{{ route('permissions.selectlist', 'permissions') }}" method="selectpermissions" :options="[]">
+                            </x-custom-select>
+                            @error('permissions')
+                                <div class="text-danger text-form"> {{ $message }} </div>
+                            @enderror
+                        </div>
                     </div>
 
-                    <div class="field">
+
+                    {{-- <div class="field">
                         <label class="label">Permissions</label>
                         {!! Form::select('permissions[]', $permissions, [], ['class' => 'input']) !!}
                         @error('permission')
                             <div class="form-text"> {{ $message }} </div>
                         @enderror
 
-                    </div>
+                    </div> --}}
 
                     <hr>
                     <div class="field">
@@ -87,66 +102,6 @@
 </x-main>
 
 
-{{-- <x-main>
-    <div class="row">
-        <div class="col-12 mb-4 order-0">
-            <div class="card">
-                <div class="d-flex align-items-end row">
-                    <div class="col-sm-12">
-                        <div class="card-body table-responsive">
-                           <div class="col-12 d-flex justify-content-between">
-                               <h5 class="card-title text-primary">{{ __('user.create_user') }}</h5>
-                           </div>
-                           <form method="POST" action="{{ route('users.store') }}">
-                            @csrf
-                            <div class="mb-3">
-                                <label  class="form-label">{{ __('user.name') }}</label>
-                                {!! Form::text('name',null, ['placeholder'=> __('user.name'),  'class'=>'form-control']) !!}
-                                @error('name')
-                                <div  class="form-text"> {{ $message }} </div>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label  class="form-label">{{ __('user.email') }}</label>
-                                {!! Form::email('email',null, ['placeholder'=> __('user.email') ,  'class'=>'form-control']) !!}
-                                @error('email')
-                                <div  class="form-text"> {{ $message }} </div>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label  class="form-label">{{ __('user.roles') }}</label>
-                                {!! Form::select('roles[]', $roles,[], array('class' => 'form-control','multiple')) !!}
-                                @error('roles')
-                                <div  class="form-text"> {{ $message }} </div>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label  class="form-label">{{ __('user.permissions') }}</label>
-                                {!! Form::select('permissions[]', $permissions,[], array('class' => 'form-control','multiple')) !!}
-                                @error('permissions')
-                                <div  class="form-text"> {{ $message }} </div>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label  class="form-label">{{ __('user.password') }}</label>
-                                {!! Form::password('password', ['placeholder'=>__('user.password'),  'class'=>'form-control']) !!}
-                                @error('password')
-                                <div  class="form-text"> {{ $message }} </div>
-                                @enderror
-                            </div>
-                            <div class="mb-3">
-                                <label  class="form-label">{{ __('user.confirm_password') }}</label>
-                                {!! Form::password('confirm-password', ['placeholder'=>__('user.confirm_password'),  'class'=>'form-control']) !!}
-                                @error('password')
-                                <div  class="form-text"> {{ $message }} </div>
-                                @enderror
-                            </div>
-                            <button type="submit" class="btn btn-primary">{{ __('button.create') }}</button>
-                        </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</x-main> --}}
+
+<x-custom-modal id="selectroles" size="w-full" name="Roles"></x-custom-modal>
+<x-custom-modal id="selectpermissions" size="w-full" name="Permissions"></x-custom-modal>

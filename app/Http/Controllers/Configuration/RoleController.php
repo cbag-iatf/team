@@ -21,6 +21,19 @@ class RoleController extends Controller
         return view('pages.configuration.roles.index', compact('roles', 'permissions'));
     }
 
+     /**
+     * Display a listing of the resource.
+     *
+     * @param string $field
+     * @return Application|Factory|View
+     */
+    public function selectlist(string $field)
+    {
+        $roles = Role::all();
+        return view('pages.select.roles', compact('field','roles'));
+    }
+
+
     public function create(): Factory|View|Application
     {
         return view('pages.configuration.roles.create');

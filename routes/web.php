@@ -17,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/roles-selected/{field}', [RoleController::class, 'selectlist'])->name('roles.selectlist');
+Route::get('/permissions-selected/{field}', [PermissionController::class, 'selectlist'])->name('permissions.selectlist');
+
+
 Route::get('/', function () {
     return view('home');
 })->middleware(['auth'])->name('home');

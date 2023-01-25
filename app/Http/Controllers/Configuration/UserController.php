@@ -68,10 +68,18 @@ class UserController extends Controller
     {
         $user = User::findOrFail(decrypt($id));
         // dd($user);
-        $roles = Role::pluck('name','name')->all();
-        $permissions = Permission::pluck('name','name')->all();
-        $userRole = $user->roles->pluck('name','name')->all();
-        $userPermission = $user->permissions->pluck('name','name')->all();
+        $roles = Role::pluck('name','id')->all();
+        // dd($roles);
+
+        $permissions = Permission::pluck('name','id')->all();
+        // $userRole = $user->roles->pluck('name','id')->all();
+        $userRole = $user->roles;
+
+        // dd($userRole);
+
+        // $userPermission = $user->permissions->pluck('name','id')->all();
+        $userPermission = $user->permissions;
+
 
         return view('pages.configuration.user.edit',compact('user','roles','userRole', 'permissions', 'userPermission'));
     }
@@ -130,7 +138,9 @@ class UserController extends Controller
             $user->givePermissionTo($request->input('permissions'));
         }
 
-        return  back()->with('toast_success','Modifié avec succés');
+        return redirect()->route('users.index')
+        ->with('toast_success','Modifié avec succés');
+        // return  back()->with('toast_success','Modifié avec succés');
     }
 
     /**

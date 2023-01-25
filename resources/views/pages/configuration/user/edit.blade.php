@@ -10,7 +10,7 @@
     </section>
 
     <section class="section main-section">
-     
+
         <div class="card">
             <header class="card-header">
                 <p class="card-header-title">
@@ -43,24 +43,53 @@
                     </div>
 
                     <hr>
-                    <div class="field">
+                    <div class="field w-full ">
+                        <div class="w-full">
+                            <x-custom-select label="Roles" name="roles" id="roles"
+                                route="{{ route('roles.selectlist', 'roles') }}" method="selectroles" :options="[
+                                    $userRole[0]->id ?? null,
+                                    $userRole[0]->id ?? null,
+                                    $userRole[0]->name ?? null,
+
+                                ]">
+                            </x-custom-select>
+                            @error('roles')
+                                <div class="text-danger text-form"> {{ $message }} </div>
+                            @enderror
+                        </div>
+                    </div>
+                    {{-- <div class="field">
                         <label class="label">Roles</label>
                         {!! Form::select('roles[]', $roles, $userRole, ['class' => 'input']) !!}
                         @error('roles')
                             <div class="form-text"> {{ $message }} </div>
                         @enderror
 
-                    </div>
+                    </div> --}}
+                    <div class="field w-full ">
+                        <div class="w-full">
+                            <x-custom-select label="Permissions" name="permissions" id="permissions"
+                                route="{{ route('permissions.selectlist', 'permissions') }}" method="selectpermissions" :options="[
+                                    $userPermission[0]->id ?? null,
+                                    $userPermission[0]->id ?? null,
+                                    $userPermission[0]->name ?? null,
 
-                    <div class="field">
+                                ]">
+                            </x-custom-select>
+                            @error('permissions')
+                                <div class="text-danger text-form"> {{ $message }} </div>
+                            @enderror
+                        </div>
+                    </div>
+                    {{-- <div class="field">
                         <label class="label">Permissions</label>
-                        {!! Form::select('permissions[]', $permissions,$userPermission, ['class' => 'input']) !!}
+                        {!! Form::select('permissions[]', $permissions, $userPermission, ['class' => 'input']) !!}
                         @error('permission')
                             <div class="form-text"> {{ $message }} </div>
                         @enderror
 
-                    </div>
-                   
+                    </div> --}}
+
                     <hr>
                     <div class="field">
                         <div class="control">
@@ -74,5 +103,7 @@
         </div>
     </section>
 
-   
+
 </x-main>
+<x-custom-modal id="selectroles" size="w-full" name="Roles"></x-custom-modal>
+<x-custom-modal id="selectpermissions" size="w-full" name="Permissions"></x-custom-modal>

@@ -21,6 +21,18 @@ class PermissionController extends Controller
         return view('pages.configuration.permission.index', compact('permissions'));
     }
 
+    /**
+     * Display a listing of the resource.
+     *
+     * @param string $field
+     * @return Application|Factory|View
+     */
+    public function selectlist(string $field)
+    {
+        $permissions = Permission::all();
+        return view('pages.select.permissions', compact('field','permissions'));
+    }
+
     public function create(): Factory|View|Application
     {
         return view('pages.configuration.permission.create');

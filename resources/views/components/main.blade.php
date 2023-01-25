@@ -8,8 +8,10 @@
     <title>Dashboard - Admin One Tailwind CSS Admin Dashboard</title>
 
     <!-- Tailwind is included -->
-    <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+    <link rel="stylesheet" href="{{ asset('assets/css/main.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/form/main.css') }}">
+
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
@@ -138,5 +140,6 @@
 
 </html>
 
-
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
 @include('sweetalert::alert')
